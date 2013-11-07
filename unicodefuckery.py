@@ -20,64 +20,79 @@ to_circles.update({ord('0'): 0x24ea})
 
 # http://en.wikipedia.org/wiki/Mathematical_Alphanumeric_Symbols
 
-# todo
-to_bold = dict()
-to_bold.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
-to_bold.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
+to_bold = dict() #
+to_bold.update(zip(range(ord('a'), ord('z')+1),range(0x1d41a, 0x1d433+1)))
+to_bold.update(zip(range(ord('A'), ord('Z')+1),range(0x1d400, 0x1d419+1)))
 
-# todo
-to_italic = dict()
-to_italic.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
-to_italic.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
+to_italic = dict() #
+to_italic.update(zip(range(ord('a'), ord('z')+1),range(0x1d44e, 0x1d467+1)))
+to_italic.update(zip(range(ord('A'), ord('Z')+1),range(0x1d434, 0x1d44d+1)))
+to_italic[ord('h')] = 0x210e
 
-# todo
-to_bold_italic = dict()
-to_bold_italic.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
-to_bold_italic.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
+to_bold_italic = dict() # 
+to_bold_italic.update(zip(range(ord('a'), ord('z')+1),range(0x1d482, 0x1d49b+1)))
+to_bold_italic.update(zip(range(ord('A'), ord('Z')+1),range(0x1d468, 0x1d481+1)))
 
-# todo
-to_script = dict()
-to_script.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
-to_script.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
+to_script = dict() #
+to_script.update(zip(range(ord('a'), ord('z')+1),range(0x1d4b6, 0x1d4cf+1)))
+to_script.update(zip(range(ord('A'), ord('Z')+1),range(0x1d49c, 0x1d4b5+1)))
+to_script[ord('B')] = 0x212c
+to_script[ord('E')] = 0x2130
+to_script[ord('F')] = 0x2131
+to_script[ord('H')] = 0x210b
+to_script[ord('I')] = 0x2110
+to_script[ord('L')] = 0x2112
+to_script[ord('M')] = 0x2133
+to_script[ord('R')] = 0x211b
+to_script[ord('e')] = 0x212f
+to_script[ord('g')] = 0x210a
+to_script[ord('o')] = 0x2134
 
-# todo
-to_bold_script = dict()
-to_bold_script.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
-to_bold_script.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
+to_bold_script = dict() # 
+to_bold_script.update(zip(range(ord('a'), ord('z')+1),range(0x1d4ea, 0x1d503+1)))
+to_bold_script.update(zip(range(ord('A'), ord('Z')+1),range(0x1d4d0, 0x1d4e9+1)))
 
-# todo
+# todo + missing
 to_fraktur = dict()
-to_fraktur.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
-to_fraktur.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
+to_fraktur.update(zip(range(ord('a'), ord('z')+1),range(0x1d51e, 0x1d537+1)))
+to_fraktur.update(zip(range(ord('A'), ord('Z')+1),range(0x1d504, 0x1d51d+1)))
+to_fraktur[ord('C')] = 0x212d
+to_fraktur[ord('H')] = 0x210c
+to_fraktur[ord('I')] = 0x2111
+to_fraktur[ord('R')] = 0x211c
+to_fraktur[ord('Z')] = 0x2128
+
+# todo + missing
+to_doublestruck = dict()
+to_doublestruck.update(zip(range(ord('a'), ord('z')+1),range(0x1d552, 0x1d56b+1)))
+to_doublestruck.update(zip(range(ord('A'), ord('Z')+1),range(0x1d538, 0x1d551+1)))
+to_doublestruck[ord('C')] = 0x2102
+to_doublestruck[ord('H')] = 0x210d
+to_doublestruck[ord('N')] = 0x2115
+to_doublestruck[ord('P')] = 0x2119
+to_doublestruck[ord('Q')] = 0x211a
+to_doublestruck[ord('R')] = 0x211d
+to_doublestruck[ord('Z')] = 0x2124
 
 to_bold_fraktur = dict()
 to_bold_fraktur.update(zip(range(ord('a'), ord('z')+1),range(0x1d586, 0x1d59f+1)))
 to_bold_fraktur.update(zip(range(ord('A'), ord('Z')+1),range(0x1d56c, 0x1d585+1)))
 
-# todo
-to_doublestruck = dict()
-to_doublestruck.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
-to_doublestruck.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
-
-# todo
 to_sans = dict()
-to_sans.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
-to_sans.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
+to_sans.update(zip(range(ord('a'), ord('z')+1),range(0x1d5ba, 0x1d5d3+1)))
+to_sans.update(zip(range(ord('A'), ord('Z')+1),range(0x1d5a0, 0x1d5b9+1)))
 
-# todo
 to_sans_bold = dict()
-to_sans_bold.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
-to_sans_bold.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
+to_sans_bold.update(zip(range(ord('a'), ord('z')+1),range(0x1d5ee, 0x1d607+1)))
+to_sans_bold.update(zip(range(ord('A'), ord('Z')+1),range(0x1d5d4, 0x1d5ed+1)))
 
-# todo
 to_sans_italic = dict()
-to_sans_italic.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
-to_sans_italic.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
+to_sans_italic.update(zip(range(ord('a'), ord('z')+1),range(0x1d622, 0x1d63b+1)))
+to_sans_italic.update(zip(range(ord('A'), ord('Z')+1),range(0x1d608, 0x1d621+1)))
 
-# todo
 to_sans_bold_italic = dict()
-to_sans_bold_italic.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
-to_sans_bold_italic.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
+to_sans_bold_italic.update(zip(range(ord('a'), ord('z')+1),range(0x1d656, 0x1d66f+1)))
+to_sans_bold_italic.update(zip(range(ord('A'), ord('Z')+1),range(0x1d63c, 0x1d655+1)))
 
 to_monospace = dict()
 to_monospace.update(zip(range(ord('a'), ord('z')+1),range(0x1d68a, 0x1d6a4+1)))
