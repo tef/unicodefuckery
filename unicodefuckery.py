@@ -48,9 +48,9 @@ to_script[ord('e')] = 0x212f
 to_script[ord('g')] = 0x210a
 to_script[ord('o')] = 0x2134
 
-to_bold_script = dict() # 
-to_bold_script.update(zip(range(ord('a'), ord('z')+1),range(0x1d4ea, 0x1d503+1)))
-to_bold_script.update(zip(range(ord('A'), ord('Z')+1),range(0x1d4d0, 0x1d4e9+1)))
+to_script_bold = dict() # 
+to_script_bold.update(zip(range(ord('a'), ord('z')+1),range(0x1d4ea, 0x1d503+1)))
+to_script_bold.update(zip(range(ord('A'), ord('Z')+1),range(0x1d4d0, 0x1d4e9+1)))
 
 # todo + missing
 to_fraktur = dict()
@@ -74,9 +74,9 @@ to_doublestruck[ord('Q')] = 0x211a
 to_doublestruck[ord('R')] = 0x211d
 to_doublestruck[ord('Z')] = 0x2124
 
-to_bold_fraktur = dict()
-to_bold_fraktur.update(zip(range(ord('a'), ord('z')+1),range(0x1d586, 0x1d59f+1)))
-to_bold_fraktur.update(zip(range(ord('A'), ord('Z')+1),range(0x1d56c, 0x1d585+1)))
+to_fraktur_bold = dict()
+to_fraktur_bold.update(zip(range(ord('a'), ord('z')+1),range(0x1d586, 0x1d59f+1)))
+to_fraktur_bold.update(zip(range(ord('A'), ord('Z')+1),range(0x1d56c, 0x1d585+1)))
 
 to_sans = dict()
 to_sans.update(zip(range(ord('a'), ord('z')+1),range(0x1d5ba, 0x1d5d3+1)))
@@ -124,10 +124,10 @@ fuckery = collections.OrderedDict([
     ('italic', lambda line: line.translate(to_italic)),
     ('bold_italic', lambda line: line.translate(to_bold_italic)),
     ('script', lambda line: line.translate(to_script)),
-    ('bold_script', lambda line: line.translate(to_bold_script)),
+    ('script_bold', lambda line: line.translate(to_script_bold)),
     ('fraktur', lambda line: line.translate(to_fraktur)),
     ('doublestruck', lambda line: line.translate(to_doublestruck)),
-    ('bold_fraktur', lambda line: line.translate(to_bold_fraktur)),
+    ('fraktur_bold', lambda line: line.translate(to_fraktur_bold)),
     ('sans', lambda line: line.translate(to_sans)),
     ('sans_bold', lambda line: line.translate(to_sans_bold)),
     ('sans_italic', lambda line: line.translate(to_sans_italic)),
@@ -140,6 +140,7 @@ fuckery = collections.OrderedDict([
     ('upper', lambda line: line.upper()),
     ('lower', lambda line: line.lower()),
 ])
+
 
 if __name__ == '__main__':
     if sys.argv[1:]:
