@@ -102,8 +102,8 @@ to_monospace.update(zip(range(ord('A'), ord('Z')+1),range(0x1d670, 0x1d689+1)))
 combining = []
 combining.extend(range(0x300, 0x36f+1)) # Combining Diacritical Marks
 combining.extend(range(0x1dc0, 0x1de6+1)) # Combining Diacritical Marks Supplement
-combining.extend(range(0x1dfc, 0x1dff+1)) 
-combining.extend(range(0x20d0, 0x20f0+1)) # Combining Diacritical Marks for Symbols
+#combining.extend(range(0x1dfc, 0x1dff+1)) 
+#combining.extend(range(0x20d0, 0x20f0+1)) # Combining Diacritical Marks for Symbols
 combining = [chr(x) for x in combining]
 
 def make_combining(combine_chars):
@@ -134,9 +134,12 @@ fuckery = collections.OrderedDict([
     ('sans_bold_italic', lambda line: line.translate(to_sans_bold_italic)),
     ('monospace', lambda line: line.translate(to_monospace)),
     ('umlaut', make_combining(lambda:["\u0308"])),
+    ('lowline', make_combining(lambda:["\u0332"])),
+    ('doublemacron', make_combining(lambda:["\u035e"])),
+    ('doublemacronbelow', make_combining(lambda:["\u035f"])),
     ('combine1', make_combining(lambda: random.sample(combining,1))),
     ('combine2', make_combining(lambda: random.sample(combining,2))),
-    ('combiner', make_combining(lambda: random.sample(combining,random.randint(0,4)))),
+    ('combiner', make_combining(lambda: random.sample(combining,random.randint(0,99)))),
     ('upper', lambda line: line.upper()),
     ('lower', lambda line: line.lower()),
 ])
@@ -144,7 +147,16 @@ fuckery = collections.OrderedDict([
 
 if __name__ == '__main__':
     if sys.argv[1:]:
-        fns = [fuckery[name] for name in sys.argv[1:]]
+        fns = []
+        for name in sys.argv[1:]:
+            if '*' in name:
+                name, count = name.split('*')
+                for c in range(int(count)):
+                    fns.append(fuckery[name])
+
+            else:
+                fns.append(fuckery[name])
+
         while True:
             line = sys.stdin.readline()
             for fn in fns:
